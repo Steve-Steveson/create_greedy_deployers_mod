@@ -14,8 +14,8 @@ public class DeployerMovementBehaviorMixin {
 //
 //    }
 
-    @Inject(method = "tryGrabbingItem", at = @At(value = "TAIL"))
-    private void tryGrabbingItem(MovementContext context, CallbackInfo ci) {
-
-    }
+//    @Inject(method = "tryGrabbingItem", at = @At(value = "TAIL"))
+//    private void tryGrabbingItem(MovementContext context, CallbackInfo ci) {
+//
+//    }
 }
