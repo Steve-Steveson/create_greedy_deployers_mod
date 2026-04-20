@@ -11,6 +11,7 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> DEPLOYER_WANTS_MORE = tag("deployer_grabs_extra");
 
+        //This tag flags items to which the added behavior should apply
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(CreateGreedyDeployersMod.MOD_ID, name));
         }
