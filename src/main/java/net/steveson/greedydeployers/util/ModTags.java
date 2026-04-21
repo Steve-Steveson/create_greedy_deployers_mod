@@ -9,7 +9,7 @@ import net.steveson.greedydeployers.CreateGreedyDeployersMod;
 public class ModTags {
 
     public static class Items {
-        //These tags are split because deployer on contraptions don't place tanks in 3x3 regardless of amount in hand.
+        //These tags are split because deployers on contraptions don't place tanks in 3x3 regardless of amount in hand.
         //  If that were to be fixed, players could easily add the places_like_tanks tag to the deployer_grabs_vaultlike_amount tag.
         public static final TagKey<Item> VAULTLIKE_ITEMS = tag("places_like_vaults");
         public static final TagKey<Item> TANKLIKE_ITEMS = tag("places_like_tanks");
