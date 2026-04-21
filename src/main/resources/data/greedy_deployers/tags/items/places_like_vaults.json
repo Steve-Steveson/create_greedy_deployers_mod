@@ -2,26 +2,85 @@
   "values": [
     "create:item_vault",
 
-    "create_connected:fluid_vessel",
-    "create_connected:fluid_vessel",
+    {
+      "id": "create_connected:fluid_vessel",
+      "required": false
+    },
+    {
+      "id": "create_connected:creative_fluid_vessel",
+      "required": false
+    },
 
-    "createdeco:white_shipping_container",
-    "createdeco:orange_shipping_container",
-    "createdeco:magenta_shipping_container",
-    "createdeco:light_blue_shipping_container",
-    "createdeco:yellow_shipping_container",
-    "createdeco:lime_shipping_container",
-    "createdeco:pink_shipping_container",
-    "createdeco:gray_shipping_container",
-    "createdeco:light_gray_shipping_container",
-    "createdeco:cyan_shipping_container",
-    "createdeco:purple_shipping_container",
-    "createdeco:blue_shipping_container",
-    "createdeco:brown_shipping_container",
-    "createdeco:green_shipping_container",
-    "createdeco:red_shipping_container",
-    "createdeco:black_shipping_container",
 
-    "#create_vibrant_vaults:horizontal_vaults"
+    {
+      "id": "createdeco:white_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:orange_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:magenta_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:light_blue_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:yellow_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:lime_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:pink_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:gray_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:light_gray_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:cyan_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:purple_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:blue_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:brown_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:green_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:red_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:black_shipping_container",
+      "required": false
+    },
+
+
+    {
+      "id": "#create_vibrant_vaults:horizontal_vaults",
+      "required": false
+    }
   ]
 }

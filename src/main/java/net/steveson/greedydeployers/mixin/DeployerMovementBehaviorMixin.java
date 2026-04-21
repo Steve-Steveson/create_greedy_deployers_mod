@@ -21,11 +21,25 @@ public class DeployerMovementBehaviorMixin {
     private void tryGrabbingItem(MovementContext context, CallbackInfo ci, DeployerFakePlayer player) {
         FilterItemStack filter = context.getFilterFromBE();
         //Checking the filter item for the correct tag is done first so that other items don't run unnecessary code.
+        int target = 1;
+        if (Config.grabVaults && filter.item().is(ModTags.Items.DEPLOYER_WANTS_VAULTLIKE_AMOUNT)) {
+            target = Config.desiredStackSizeVaultlike;
+        } else
+        if (filter.item().is(ModTags.Items.DEPLOYER_WANTS_LARGE_AMOUNT)) {
+            target = Config.desiredStackSizeMedium;
+        } else
+        if (filter.item().is(ModTags.Items.DEPLOYER_WANTS_MEDIUM_AMOUNT)) {
+            target = Config.desiredStackSizeMedium;
+        } else
         if (filter.item().is(ModTags.Items.DEPLOYER_WANTS_SMALL_AMOUNT)) {
+            target = Config.desiredStackSizeSmall;
+        }
 
+
+        if (target > 1) {
             ItemStack itemStack = player.getMainHandItem();
             //determines how many items need to be grabbed to reach the number specified by the config file
-            int desire = Config.desiredStackSizeSmall - itemStack.getCount();
+            int desire = target - itemStack.getCount();
 
             //ignore cases where held item cannot stack with filter item, or it has enough items already
             if (ItemStack.isSameItemSameTags(filter.item(), itemStack) && desire > 0) {

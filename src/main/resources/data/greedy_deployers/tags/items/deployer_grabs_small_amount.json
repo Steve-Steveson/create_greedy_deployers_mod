@@ -1,5 +1,10 @@
 {
   "values": [
-    "#tfc:support_beams"
+
+    {
+      "id": "#tfc:support_beams",
+      "required": false
+    }
+
   ]
 }

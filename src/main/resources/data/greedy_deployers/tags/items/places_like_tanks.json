@@ -2,14 +2,22 @@
   "values": [
     "create:fluid_tank",
     "create:creative_fluid_tank",
+    {
+      "id": "railways:fuel_tank",
+      "required": false
+    },
+    {
+      "id": "create_connected:item_silo",
+      "required": false
+    },
+    {
+      "id": "#create_vibrant_vaults:vertical_vaults",
+      "required": false
+    },
 
-    "railways:fuel_tank",
-
-    "create_connected:item_silo",
-
-    "#create_vibrant_vaults:vertical_vaults",
-
-
-    "createaddition:modular_accumulator"
+    {
+      "id": "createaddition:modular_accumulator",
+      "required": false
+    }
   ]
 }
