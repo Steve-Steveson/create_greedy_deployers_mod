@@ -20,21 +20,21 @@ public class DeployerMovementBehaviorMixin {
     @Inject(method = "tryGrabbingItem", at = @At("TAIL"), locals = LocalCapture.CAPTURE_FAILHARD, remap = false)
     private void tryGrabbingItem(MovementContext context, CallbackInfo ci, DeployerFakePlayer player) {
         FilterItemStack filter = context.getFilterFromBE();
+        ItemStack filterItem = filter.item();
         //Checking the filter item for the correct tag is done first so that other items don't run unnecessary code.
         int target = 1;
-        if (Config.grabVaults && filter.item().is(ModTags.Items.DEPLOYER_WANTS_VAULTLIKE_AMOUNT)) {
+        if (Config.grabVaults && filterItem.is(ModTags.Items.DEPLOYER_WANTS_VAULTLIKE_AMOUNT)) {
             target = Config.desiredStackSizeVaultlike;
-        } else
-        if (filter.item().is(ModTags.Items.DEPLOYER_WANTS_LARGE_AMOUNT)) {
+        }
+        else if (filterItem.is(ModTags.Items.DEPLOYER_WANTS_LARGE_AMOUNT)) {
+            target = Config.desiredStackSizeLarge;
+        }
+        else if (filterItem.is(ModTags.Items.DEPLOYER_WANTS_MEDIUM_AMOUNT)) {
             target = Config.desiredStackSizeMedium;
-        } else
-        if (filter.item().is(ModTags.Items.DEPLOYER_WANTS_MEDIUM_AMOUNT)) {
-            target = Config.desiredStackSizeMedium;
-        } else
-        if (filter.item().is(ModTags.Items.DEPLOYER_WANTS_SMALL_AMOUNT)) {
+        }
+        else if (filterItem.is(ModTags.Items.DEPLOYER_WANTS_SMALL_AMOUNT)) {
             target = Config.desiredStackSizeSmall;
         }
-
 
         if (target > 1) {
             ItemStack itemStack = player.getMainHandItem();
@@ -42,7 +42,7 @@ public class DeployerMovementBehaviorMixin {
             int desire = target - itemStack.getCount();
 
             //ignore cases where held item cannot stack with filter item, or it has enough items already
-            if (ItemStack.isSameItemSameTags(filter.item(), itemStack) && desire > 0) {
+            if (ItemStack.isSameItemSameTags(filterItem, itemStack) && desire > 0) {
 
                 //remove desired amount of the filtered item from attached inventories
                 //  will not grab if it cannot reach the desired amount
