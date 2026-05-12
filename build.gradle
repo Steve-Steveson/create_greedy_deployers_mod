@@ -196,7 +196,7 @@ tasks.named('processResources', ProcessResources).configure {
 
 mixin {
     // MixinGradle Settings
-    add sourceSets.main, 'mixins.mymod.refmap.json'
+    add sourceSets.main, 'mixins.greedy_deployers.refmap.json'
     config 'mixins.greedy_deployers.json'
 
     debug.verbose = true
